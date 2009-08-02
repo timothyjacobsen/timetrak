@@ -1,0 +1,20 @@
+<h1>Editing control</h1>
+
+<% form_for(@control) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :controlid %><br />
+    <%= f.text_field :controlid %>
+  </p>
+  <p>
+    <%= f.label :recid %><br />
+    <%= f.text_field :recid %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @control %> |
+<%= link_to 'Back', controls_path %>

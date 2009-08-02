@@ -1,0 +1,54 @@
+<h1>Listing timelines</h1>
+
+<table>
+  <tr>
+    <th>Recid</th>
+    <th>Empid</th>
+    <th>Beg date</th>
+    <th>Beg time</th>
+    <th>End time</th>
+    <th>Off time</th>
+    <th>Personal time</th>
+    <th>Total time</th>
+    <th>Client</th>
+    <th>Project</th>
+    <th>Task</th>
+    <th>Billable</th>
+    <th>Timecard</th>
+    <th>Bug nbr</th>
+    <th>Case nbr</th>
+    <th>Description</th>
+    <th>Dt create</th>
+    <th>Dt edit</th>
+  </tr>
+
+<% @timelines.each do |timeline| %>
+  <tr>
+    <td><%=h timeline.recid %></td>
+    <td><%=h timeline.empid %></td>
+    <td><%=h timeline.beg_date %></td>
+    <td><%=h timeline.beg_time %></td>
+    <td><%=h timeline.end_time %></td>
+    <td><%=h timeline.off_time %></td>
+    <td><%=h timeline.personal_time %></td>
+    <td><%=h timeline.total_time %></td>
+    <td><%=h timeline.client %></td>
+    <td><%=h timeline.project %></td>
+    <td><%=h timeline.task %></td>
+    <td><%=h timeline.billable %></td>
+    <td><%=h timeline.timecard %></td>
+    <td><%=h timeline.bug_nbr %></td>
+    <td><%=h timeline.case_nbr %></td>
+    <td><%=h timeline.description %></td>
+    <td><%=h timeline.dt_create %></td>
+    <td><%=h timeline.dt_edit %></td>
+    <td><%= link_to 'Show', timeline %></td>
+    <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
+    <td><%= link_to 'Destroy', timeline, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New timeline', new_timeline_path %>

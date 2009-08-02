@@ -1,0 +1,33 @@
+<p>
+  <b>Client:</b>
+  <%=h @project.client %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @project.project %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%=h @project.task %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @project.description %>
+</p>
+
+<p>
+  <b>Billable:</b>
+  <%=h @project.billable %>
+</p>
+
+<p>
+  <b>Timecard:</b>
+  <%=h @project.timecard %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

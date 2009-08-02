@@ -1,0 +1,50 @@
+<h1>Listing employees</h1>
+
+<table>
+  <tr>
+    <th>Empid</th>
+    <th>Name</th>
+    <th>Hiredate</th>
+    <th>Terminated</th>
+    <th>Supervisor</th>
+    <th>Beg time</th>
+    <th>Rememberlast</th>
+    <th>Client</th>
+    <th>Project</th>
+    <th>Task</th>
+    <th>Security</th>
+    <th>Supervisor note expires</th>
+    <th>Supervisor note onlyonce</th>
+    <th>Supervisor note active</th>
+    <th>Supervisor note</th>
+    <th>Last login</th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%=h employee.id %></td>
+    <td><%=h employee.name %></td>
+    <td><%=h employee.hiredate %></td>
+    <td><%=h employee.terminated %></td>
+    <td><%=h employee.supervisor %></td>
+    <td><%=h employee.beg_time %></td>
+    <td><%=h employee.rememberlast %></td>
+    <td><%=h employee.client %></td>
+    <td><%=h employee.project %></td>
+    <td><%=h employee.task %></td>
+    <td><%=h employee.security %></td>
+    <td><%=h employee.supervisor_note_expires %></td>
+    <td><%=h employee.supervisor_note_onlyonce %></td>
+    <td><%=h employee.supervisor_note_active %></td>
+    <td><%=h employee.supervisor_note %></td>
+    <td><%=h employee.last_login %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New employee', new_employee_path %>

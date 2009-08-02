@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  recid: 1
+  empid: MyString
+  beg_date: 2009-08-02 10:35:15
+  beg_time: 2009-08-02 10:35:15
+  end_time: 2009-08-02 10:35:15
+  off_time: 1.5
+  personal_time: 1.5
+  total_time: 1.5
+  client: MyString
+  project: MyString
+  task: MyString
+  billable: false
+  timecard: false
+  bug_nbr: MyString
+  case_nbr: MyString
+  description: MyText
+  dt_create: 2009-08-02 10:35:15
+  dt_edit: 2009-08-02 10:35:15
+
+two:
+  recid: 1
+  empid: MyString
+  beg_date: 2009-08-02 10:35:15
+  beg_time: 2009-08-02 10:35:15
+  end_time: 2009-08-02 10:35:15
+  off_time: 1.5
+  personal_time: 1.5
+  total_time: 1.5
+  client: MyString
+  project: MyString
+  task: MyString
+  billable: false
+  timecard: false
+  bug_nbr: MyString
+  case_nbr: MyString
+  description: MyText
+  dt_create: 2009-08-02 10:35:15
+  dt_edit: 2009-08-02 10:35:15

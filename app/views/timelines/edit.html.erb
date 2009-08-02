@@ -1,0 +1,11 @@
+<h1>Editing timeline</h1>
+
+<% form_for(@timeline) do |f| %>
+  <%= render :partial=>'edit', :locals => { :f=>f } %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @timeline %> |
+<%= link_to 'Back', timelines_path %>

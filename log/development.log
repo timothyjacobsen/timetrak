@@ -1,0 +1,1709 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (21.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (12.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateControls (20090802162744)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "control" ("controlid" integer, "recid" integer) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090802162744')[0m
+Migrating to CreateEmployees (20090802163148)
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "employee" ("empid" varchar(255), "name" varchar(255), "hiredate" datetime, "terminated" datetime, "supervisor" varchar(255), "beg_time" datetime, "rememberlast" boolean, "client" varchar(255), "project" varchar(255), "task" varchar(255), "security" integer, "supervisor_note_expires" datetime, "supervisor_note_onlyonce" boolean, "supervisor_note_active" boolean, "supervisor_note" text, "last_login" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090802163148')[0m
+Migrating to CreateProjects (20090802163255)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "projects" ("client" varchar(255), "project" varchar(255), "task" varchar(255), "description" varchar(255), "billable" boolean, "timecard" boolean) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090802163255')[0m
+Migrating to CreateTimelines (20090802163515)
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "timeline" ("recid" integer, "empid" varchar(255), "beg_date" datetime, "beg_time" datetime, "end_time" datetime, "off_time" float, "personal_time" float, "total_time" float, "client" varchar(255), "project" varchar(255), "task" varchar(255), "billable" boolean, "timecard" boolean, "bug_nbr" varchar(255), "case_nbr" varchar(255), "description" text, "dt_create" datetime, "dt_edit" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090802163515')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("control")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("employee")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("projects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("timeline")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:47:43) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:47:51) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:47:57) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/control" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:48:06) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/timeline" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:52:38) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/timelines" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:52:57) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/employees/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:53:02) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/employees" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:53:12) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/employee" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:53:24) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/timelines" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:53:39) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:55:49) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/controls/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:55:57) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/controls/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 10:58:59) [GET]
+
+ActionController::RoutingError (No route matches "/timetrak/controls" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ControlsController#index (for 127.0.0.1 at 2009-08-02 10:59:27) [GET]
+  [4;36;1mControl Load (0.7ms)[0m   [0;1mSELECT * FROM "control" [0m
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (undefined method `info' for #<String:0xb5a89890>):
+  app/controllers/controls_controller.rb:6:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ControlsController#index (for 127.0.0.1 at 2009-08-02 10:59:51) [GET]
+  [4;35;1mControl Load (0.6ms)[0m   [0mSELECT * FROM "control" [0m
+
+NameError (undefined local variable or method `debug' for #<ControlsController:0xb59c7664>):
+  app/controllers/controls_controller.rb:6:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ControlsController#index (for 127.0.0.1 at 2009-08-02 11:00:01) [GET]
+  [4;36;1mControl Load (0.5ms)[0m   [0;1mSELECT * FROM "control" [0m
+showing the index
+Rendering template within layouts/controls
+Rendering controls/index
+Completed in 59ms (View: 35, DB: 0) | 200 OK [http://localhost/controls/]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2009-08-02 11:00:12) [GET]
+  [4;35;1mTimeline Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: timelines: SELECT * FROM "timelines" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: timelines: SELECT * FROM "timelines" ):
+  app/controllers/timelines_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (266.1ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2009-08-02 11:00:17) [GET]
+  [4;36;1mTimeline Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: timelines: SELECT * FROM "timelines" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: timelines: SELECT * FROM "timelines" ):
+  app/controllers/timelines_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (89.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2009-08-02 11:01:20) [GET]
+  [4;35;1mTimeline Load (0.6ms)[0m   [0mSELECT * FROM "timeline" [0m
+Rendering template within layouts/timelines
+Rendering timelines/index
+Completed in 39ms (View: 23, DB: 1) | 200 OK [http://localhost/timelines/]
+
+
+Processing TimelinesController#new (for 127.0.0.1 at 2009-08-02 11:01:25) [GET]
+Rendering template within layouts/timelines
+Rendering timelines/new
+Completed in 379ms (View: 355, DB: 0) | 200 OK [http://localhost/timelines/new]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2009-08-02 11:12:24) [GET]
+  [4;36;1mTimeline Load (0.6ms)[0m   [0;1mSELECT * FROM "timeline" [0m
+Rendering template within layouts/timelines
+Rendering timelines/index
+Completed in 17ms (View: 4, DB: 1) | 200 OK [http://localhost/timelines/]
+
+
+Processing TimelinesController#new (for 127.0.0.1 at 2009-08-02 11:12:25) [GET]
+Rendering template within layouts/timelines
+Rendering timelines/new
+Rendered timelines/_edit (62.3ms)
+Completed in 108ms (View: 87, DB: 0) | 200 OK [http://localhost/timelines/new]
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:12:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+NameError (undefined local variable or method `control' for #<Timeline:0xb588ddd4>):
+  app/models/timeline.rb:6:in `before_save'
+  app/controllers/timelines_controller.rb:46:in `create'
+  app/controllers/timelines_controller.rb:45:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (281.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:13:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+NameError (undefined local variable or method `control' for main:Object):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:13:43) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+NameError (undefined local variable or method `control' for main:Object):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (72.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:15:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+NameError (undefined local variable or method `control' for main:Object):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mControl Load (0.6ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Create (0.3ms)[0m   [0mINSERT INTO "control" ("controlid", "recid") VALUES(1, 1)[0m
+  [4;36;1mControl Load (0.3ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Update (0.2ms)[0m   [0mUPDATE "control" SET "recid" = 2 WHERE "controlid" = 1[0m
+  [4;36;1mControl Load (0.8ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Load (0.7ms)[0m   [0mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;36;1mControl Update (0.4ms)[0m   [0;1mUPDATE "control" SET "recid" = 3 WHERE "controlid" = 1[0m
+  [4;35;1mControl Load (0.8ms)[0m   [0mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;36;1mControl Load (0.6ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Update (0.4ms)[0m   [0mUPDATE "control" SET "recid" = 4 WHERE "controlid" = 1[0m
+  [4;36;1mControl Load (0.8ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Load (0.6ms)[0m   [0mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;36;1mControl Update (0.4ms)[0m   [0;1mUPDATE "control" SET "recid" = 5 WHERE "controlid" = 1[0m
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:16:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+TypeError (can't convert Class into String):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.5ms)
+Rendered rescues/_request_and_response (11.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:17:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+MissingSourceFile (no such file to load -- Control):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (314.0ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:18:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+
+MissingSourceFile (no such file to load -- ../models/control):
+  app/models/timeline.rb:1
+  app/controllers/timelines_controller.rb:43:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#create (for 127.0.0.1 at 2009-08-02 11:19:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "timeline"=>{"dt_create(3i)"=>"2", "beg_time(4i)"=>"17", "beg_date(3i)"=>"2", "dt_create(4i)"=>"17", "bug_nbr"=>"", "billable"=>"0", "total_time"=>"", "beg_time(5i)"=>"12", "beg_date(4i)"=>"17", "dt_edit(1i)"=>"2009", "dt_create(5i)"=>"12", "beg_date(5i)"=>"12", "dt_edit(2i)"=>"8", "personal_time"=>"", "dt_edit(3i)"=>"2", "end_time(1i)"=>"2009", "dt_edit(4i)"=>"17", "project"=>"", "end_time(2i)"=>"8", "dt_edit(5i)"=>"12", "case_nbr"=>"", "client"=>"", "end_time(3i)"=>"2", "timecard"=>"0", "task"=>"", "end_time(4i)"=>"17", "empid"=>"jenica", "description"=>"test", "end_time(5i)"=>"12", "beg_time(1i)"=>"2009", "dt_create(1i)"=>"2009", "off_time"=>"", "beg_time(2i)"=>"8", "beg_date(1i)"=>"2009", "dt_create(2i)"=>"8", "beg_time(3i)"=>"2", "beg_date(2i)"=>"8"}}
+  [4;35;1mControl Load (0.4ms)[0m   [0mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "control" ORDER BY control.controlid DESC LIMIT 1[0m
+  [4;35;1mControl Update (2.9ms)[0m   [0mUPDATE "control" SET "recid" = 6 WHERE "controlid" = 1[0m
+  [4;36;1mTimeline Create (0.3ms)[0m   [0;1mINSERT INTO "timeline" ("beg_date", "dt_create", "end_time", "total_time", "billable", "bug_nbr", "personal_time", "recid", "project", "dt_edit", "client", "case_nbr", "empid", "task", "timecard", "description", "off_time", "beg_time") VALUES('2009-08-02 17:12:00', '2009-08-02 17:12:00', '2009-08-02 17:12:00', NULL, 'f', '', NULL, 6, '', '2009-08-02 17:12:00', '', '', 'jenica', '', 'f', 'test', NULL, '2009-08-02 17:12:00')[0m
+Redirected to http://localhost:3000/timelines/6
+Completed in 87ms (DB: 4) | 302 Found [http://localhost/timelines]
+
+
+Processing TimelinesController#show (for 127.0.0.1 at 2009-08-02 11:19:09) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTimeline Load (0.7ms)[0m   [0mSELECT * FROM "timeline" WHERE ("timeline"."recid" = 6) [0m
+Rendering template within layouts/timelines
+Rendering timelines/show
+Completed in 64ms (View: 29, DB: 1) | 200 OK [http://localhost/timelines/6]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2009-08-02 11:19:26) [GET]
+  [4;36;1mTimeline Load (1.0ms)[0m   [0;1mSELECT * FROM "timeline" [0m
+Rendering template within layouts/timelines
+Rendering timelines/index
+Completed in 42ms (View: 23, DB: 1) | 200 OK [http://localhost/timelines]
+
+
+Processing TimelinesController#edit (for 127.0.0.1 at 2009-08-02 11:19:41) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTimeline Load (0.8ms)[0m   [0mSELECT * FROM "timeline" WHERE ("timeline"."recid" = 6) [0m
+Rendering template within layouts/timelines
+Rendering timelines/edit
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0xb59b7598>) on line #1 of app/views/timelines/_edit.html.erb.html:
+1:   <%= f.error_messages %>
+2: 
+3:   <p>
+4:     <%= f.label :empid %><br />
+
+    app/views/timelines/_edit.html.erb.html:1
+    app/views/timelines/edit.html.erb:4
+    app/views/timelines/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (106.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#edit (for 127.0.0.1 at 2009-08-02 11:20:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mTimeline Load (0.6ms)[0m   [0;1mSELECT * FROM "timeline" WHERE ("timeline"."recid" = 6) [0m
+Rendering template within layouts/timelines
+Rendering timelines/edit
+Rendered timelines/_edit (35.4ms)
+Completed in 261ms (View: 77, DB: 1) | 200 OK [http://localhost/timelines/6/edit]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:21:35) [GET]
+  [4;35;1mEmployee Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: employees: SELECT * FROM "employees" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: employees: SELECT * FROM "employees" ):
+  app/controllers/employees_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:22:35) [GET]
+  [4;36;1mEmployee Load (0.5ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:22:39) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb585fa9c>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:27:06) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb5912e94>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (287.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:27:10) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb59f5208>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:27:11) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb5810adc>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (172.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:27:11) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb58fe3b8>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (305.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:27:17) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+
+ActionView::TemplateError (undefined method `supervior_note_active' for #<Employee:0xb59e70cc>) on line #60 of app/views/employees/new.html.erb:
+57:   </p>
+58:   <p>
+59:     <%= f.label :supervior_note_active %><br />
+60:     <%= f.check_box :supervior_note_active %>
+61:   </p>
+62:   <p>
+63:     <%= f.label :supervisor_note %><br />
+
+    app/views/employees/new.html.erb:60
+    app/views/employees/new.html.erb:3
+    app/controllers/employees_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:28:27) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 254ms (View: 242, DB: 0) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2009-08-02 11:29:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "employee"=>{"last_login(1i)"=>"2009", "supervisor_note"=>"", "supervisor_note_expires(3i)"=>"2", "beg_time(4i)"=>"17", "name"=>"Jenica Jacobsen", "last_login(2i)"=>"8", "supervisor_note_expires(4i)"=>"17", "beg_time(5i)"=>"28", "terminated(1i)"=>"2009", "last_login(3i)"=>"2", "supervisor_note_expires(5i)"=>"28", "security"=>"", "terminated(2i)"=>"8", "hiredate(1i)"=>"2009", "last_login(4i)"=>"17", "terminated(3i)"=>"2", "hiredate(2i)"=>"8", "last_login(5i)"=>"28", "terminated(4i)"=>"17", "hiredate(3i)"=>"2", "supervisor_note_onlyonce"=>"0", "project"=>"Chaos", "rememberlast"=>"1", "terminated(5i)"=>"28", "hiredate(4i)"=>"17", "client"=>"Walmart", "hiredate(5i)"=>"28", "task"=>"Chaos", "empid"=>"jenica", "supervisor_note_active"=>"0", "beg_time(1i)"=>"2009", "supervisor_note_expires(1i)"=>"2009", "beg_time(2i)"=>"8", "supervisor_note_expires(2i)"=>"8", "beg_time(3i)"=>"2", "supervisor"=>"derek"}}
+WARNING: Can't mass-assign these protected attributes: empid
+  [4;35;1mEmployee Create (0.3ms)[0m   [0mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES('Jenica Jacobsen', '', '2009-08-02 17:28:00', NULL, '2009-08-02 17:28:00', '2009-08-02 17:28:00', 't', 'Chaos', 'f', 'Walmart', 'Chaos', 'f', 'derek', '2009-08-02 17:28:00', '2009-08-02 17:28:00')[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 40ms (DB: 0) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:29:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmployee Load (0.2ms)[0m   [0;1mSELECT * FROM "employee" WHERE ("employee"."empid" = '1') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=1):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:29:40) [GET]
+  Parameters: {"id"=>"jenica"}
+  [4;35;1mEmployee Load (0.3ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = 'jenica') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=jenica):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (230.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:29:50) [GET]
+  [4;36;1mEmployee Load (1.1ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-02 11:30:06) [GET]
+
+ActionController::RoutingError (No route matches "/employee" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:30:09) [GET]
+  [4;35;1mEmployee Load (0.9ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (164.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:32:59) [GET]
+  [4;36;1mEmployee Load (0.9ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (106.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:33:03) [GET]
+  [4;35;1mEmployee Load (1.2ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:33:04) [GET]
+  [4;36;1mEmployee Load (0.8ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (313.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:33:04) [GET]
+  [4;35;1mEmployee Load (0.9ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (142.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:33:19) [GET]
+  [4;36;1mEmployee Load (14.2ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #40 of app/views/employees/index.html.erb:
+37:     <td><%=h employee.supervisor_note_active %></td>
+38:     <td><%=h employee.supervisor_note %></td>
+39:     <td><%=h employee.last_login %></td>
+40:     <td><%= link_to 'Show', employee %></td>
+41:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+42:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+43:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:40
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (101.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:34:06) [GET]
+  [4;35;1mEmployee Load (0.9ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #42 of app/views/employees/index.html.erb:
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41: <!--
+42:     <td><%= link_to 'Show', employee %></td>
+43: -->
+44:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+45:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:42
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (300.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:34:22) [GET]
+  [4;36;1mEmployee Load (0.9ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (edit_employee_url failed to generate from {:controller=>"employees", :action=>"edit", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}, expected: {:controller=>"employees", :action=>"edit"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:28:00", terminated: "2009-08-02 17:28:00", supervisor: "derek", beg_time: "2009-08-02 17:28:00", rememberlast: true, client: "Walmart", project: "Chaos", task: "Chaos", security: nil, supervisor_note_expires: "2009-08-02 17:28:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:28:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+42:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+43:   </tr>
+44: <% end %>
+
+    (eval):16:in `edit_employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (101.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:37:49) [GET]
+  [4;35;1mEmployee Load (0.6ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 37ms (View: 15, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:37:53) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 246ms (View: 236, DB: 0) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2009-08-02 11:37:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "employee"=>{"last_login(1i)"=>"2009", "supervisor_note"=>"", "supervisor_note_expires(3i)"=>"2", "beg_time(4i)"=>"17", "name"=>"Jenica Jacobsen", "last_login(2i)"=>"8", "supervisor_note_expires(4i)"=>"17", "beg_time(5i)"=>"37", "terminated(1i)"=>"2009", "last_login(3i)"=>"2", "supervisor_note_expires(5i)"=>"37", "security"=>"", "terminated(2i)"=>"8", "hiredate(1i)"=>"2009", "last_login(4i)"=>"17", "terminated(3i)"=>"2", "hiredate(2i)"=>"8", "last_login(5i)"=>"37", "terminated(4i)"=>"17", "hiredate(3i)"=>"2", "supervisor_note_onlyonce"=>"0", "project"=>"", "rememberlast"=>"0", "terminated(5i)"=>"37", "hiredate(4i)"=>"17", "id"=>"jenica", "client"=>"", "hiredate(5i)"=>"37", "task"=>"", "supervisor_note_active"=>"0", "beg_time(1i)"=>"2009", "supervisor_note_expires(1i)"=>"2009", "beg_time(2i)"=>"8", "supervisor_note_expires(2i)"=>"8", "beg_time(3i)"=>"2", "supervisor"=>""}}
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mEmployee Create (0.4ms)[0m   [0;1mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES('Jenica Jacobsen', '', '2009-08-02 17:37:00', NULL, '2009-08-02 17:37:00', '2009-08-02 17:37:00', 'f', '', 'f', '', '', 'f', '', '2009-08-02 17:37:00', '2009-08-02 17:37:00')[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 63ms (DB: 0) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:38:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmployee Load (0.2ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = '1') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=1):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:38:05) [GET]
+  [4;36;1mEmployee Load (1.3ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:37:00", terminated: "2009-08-02 17:37:00", supervisor: "", beg_time: "2009-08-02 17:37:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:37:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:37:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Jenica Jacobsen", hiredate: "2009-08-02 17:37:00", terminated: "2009-08-02 17:37:00", supervisor: "", beg_time: "2009-08-02 17:37:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:37:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:37:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (280.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:38:09) [GET]
+  Parameters: {"id"=>"jenica"}
+  [4;35;1mEmployee Load (0.3ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = 'jenica') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=jenica):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mEmployee Load (1.1ms)[0m   [0;1mSELECT * FROM "employee" LIMIT 1[0m
+  [4;35;1mEmployee Create (3.6ms)[0m   [0mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "empid", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ryan', NULL, 'derek', NULL, NULL)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mEmployee Load (1.5ms)[0m   [0mSELECT * FROM "employee" ORDER BY employee.empid DESC LIMIT 1[0m
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:43:53) [GET]
+  Parameters: {"id"=>"jenica"}
+  [4;36;1mEmployee Load (0.2ms)[0m   [0;1mSELECT * FROM "employee" WHERE ("employee"."empid" = 'jenica') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=jenica):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:43:58) [GET]
+  [4;35;1mEmployee Load (0.6ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 23ms (View: 6, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:44:01) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 96ms (View: 72, DB: 0) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2009-08-02 11:44:10) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "employee"=>{"last_login(1i)"=>"2009", "supervisor_note"=>"", "supervisor_note_expires(3i)"=>"2", "beg_time(4i)"=>"17", "name"=>"Tim Jacobsen", "last_login(2i)"=>"8", "supervisor_note_expires(4i)"=>"17", "beg_time(5i)"=>"44", "terminated(1i)"=>"2009", "last_login(3i)"=>"2", "supervisor_note_expires(5i)"=>"44", "security"=>"", "terminated(2i)"=>"8", "hiredate(1i)"=>"2009", "last_login(4i)"=>"17", "terminated(3i)"=>"2", "hiredate(2i)"=>"8", "last_login(5i)"=>"44", "terminated(4i)"=>"17", "hiredate(3i)"=>"2", "supervisor_note_onlyonce"=>"0", "project"=>"", "rememberlast"=>"0", "terminated(5i)"=>"44", "hiredate(4i)"=>"17", "id"=>"tim", "client"=>"", "hiredate(5i)"=>"44", "task"=>"", "supervisor_note_active"=>"0", "beg_time(1i)"=>"2009", "supervisor_note_expires(1i)"=>"2009", "beg_time(2i)"=>"8", "supervisor_note_expires(2i)"=>"8", "beg_time(3i)"=>"2", "supervisor"=>"derek"}}
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mEmployee Create (0.4ms)[0m   [0;1mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "empid", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES('Tim Jacobsen', '', '2009-08-02 17:44:00', NULL, '2009-08-02 17:44:00', '2009-08-02 17:44:00', 'f', '', 'f', '', '', NULL, 'f', 'derek', '2009-08-02 17:44:00', '2009-08-02 17:44:00')[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 50ms (DB: 0) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:44:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmployee Load (0.3ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = '1') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Employee with ID=1):
+  app/controllers/employees_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:44:18) [GET]
+  [4;36;1mEmployee Load (0.8ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:46:05) [GET]
+  [4;35;1mEmployee Load (0.9ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (272.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:46:31) [GET]
+  [4;36;1mEmployee Load (0.9ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:46:45) [GET]
+  [4;35;1mEmployee Load (15.1ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (298.7ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:48:28) [GET]
+  [4;36;1mEmployee Load (0.9ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+
+ActionView::TemplateError (employee_url failed to generate from {:controller=>"employees", :action=>"show", :id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}, expected: {:controller=>"employees", :action=>"show"}, diff: {:id=>#<Employee empid: nil, name: "Tim Jacobsen", hiredate: "2009-08-02 17:44:00", terminated: "2009-08-02 17:44:00", supervisor: "derek", beg_time: "2009-08-02 17:44:00", rememberlast: false, client: "", project: "", task: "", security: nil, supervisor_note_expires: "2009-08-02 17:44:00", supervisor_note_onlyonce: false, supervisor_note_active: false, supervisor_note: "", last_login: "2009-08-02 17:44:00">}) on line #41 of app/views/employees/index.html.erb:
+38:     <td><%=h employee.supervisor_note_active %></td>
+39:     <td><%=h employee.supervisor_note %></td>
+40:     <td><%=h employee.last_login %></td>
+41:     <td><%= link_to 'Show', employee %></td>
+42:     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+43:     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+44:   </tr>
+
+    (eval):16:in `employee_path'
+    app/views/employees/index.html.erb:41
+    app/views/employees/index.html.erb:23:in `each'
+    app/views/employees/index.html.erb:23
+    app/controllers/employees_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:50:43) [GET]
+  [4;35;1mEmployee Load (0.5ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:50:45) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 85ms (View: 76, DB: 0) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2009-08-02 11:50:52) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "employee"=>{"last_login(1i)"=>"2009", "supervisor_note"=>"", "supervisor_note_expires(3i)"=>"2", "beg_time(4i)"=>"17", "name"=>"Jenica Jacobsen", "ourid"=>"jenica", "last_login(2i)"=>"8", "supervisor_note_expires(4i)"=>"17", "beg_time(5i)"=>"50", "terminated(1i)"=>"2009", "last_login(3i)"=>"2", "supervisor_note_expires(5i)"=>"50", "security"=>"", "terminated(2i)"=>"8", "hiredate(1i)"=>"2009", "last_login(4i)"=>"17", "terminated(3i)"=>"2", "hiredate(2i)"=>"8", "last_login(5i)"=>"50", "terminated(4i)"=>"17", "hiredate(3i)"=>"2", "supervisor_note_onlyonce"=>"0", "project"=>"", "rememberlast"=>"0", "terminated(5i)"=>"50", "hiredate(4i)"=>"17", "client"=>"", "hiredate(5i)"=>"50", "task"=>"", "supervisor_note_active"=>"0", "beg_time(1i)"=>"2009", "supervisor_note_expires(1i)"=>"2009", "beg_time(2i)"=>"8", "supervisor_note_expires(2i)"=>"8", "beg_time(3i)"=>"2", "supervisor"=>""}}
+
+
+
+yaml
+--- &id001 !ruby/object:Employee 
+attributes: 
+  supervisor_note: ""
+  name: Jenica Jacobsen
+  last_login: 2009-08-02 17:50:00 Z
+  security: 
+  hiredate: 2009-08-02 17:50:00 Z
+  supervisor_note_onlyonce: "0"
+  project: ""
+  rememberlast: "0"
+  terminated: 2009-08-02 17:50:00 Z
+  client: ""
+  task: ""
+  supervisor_note_active: "0"
+  supervisor_note_expires: 2009-08-02 17:50:00 Z
+  beg_time: 2009-08-02 17:50:00 Z
+  supervisor: ""
+attributes_cache: {}
+
+changed_attributes: 
+  supervisor_note: 
+  name: 
+  last_login: 
+  hiredate: 
+  terminated: 
+  supervisor_note_onlyonce: 
+  project: 
+  rememberlast: 
+  client: 
+  task: 
+  supervisor_note_active: 
+  beg_time: 
+  supervisor_note_expires: 
+  supervisor: 
+errors: !ruby/object:ActiveRecord::Errors 
+  base: *id001
+  errors: {}
+
+new_record: true
+ourid: jenica
+
+
+  [4;36;1mEmployee Create (0.4ms)[0m   [0;1mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "empid", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES('Jenica Jacobsen', '', '2009-08-02 17:50:00', NULL, '2009-08-02 17:50:00', '2009-08-02 17:50:00', 'f', '', 'f', '', '', 'jenica', 'f', '', '2009-08-02 17:50:00', '2009-08-02 17:50:00')[0m
+Redirected to http://localhost:3000/employees/jenica
+Completed in 52ms (DB: 0) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:50:52) [GET]
+  Parameters: {"id"=>"jenica"}
+  [4;35;1mEmployee Load (0.7ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = 'jenica') [0m
+Rendering template within layouts/employees
+Rendering employees/show
+Completed in 39ms (View: 19, DB: 1) | 200 OK [http://localhost/employees/jenica]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:51:01) [GET]
+  [4;36;1mEmployee Load (0.9ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 35ms (View: 29, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:53:17) [GET]
+  [4;35;1mEmployee Load (0.9ms)[0m   [0mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2009-08-02 11:53:19) [GET]
+Rendering template within layouts/employees
+Rendering employees/new
+Rendered employees/_edit (47.3ms)
+Completed in 281ms (View: 259, DB: 0) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2009-08-02 11:53:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ph3RpV9bNRdvkjA8tozEQS/gbxVt0jY6VybIO0cTUJA=", "employee"=>{"last_login(1i)"=>"2009", "supervisor_note"=>"", "supervisor_note_expires(3i)"=>"2", "beg_time(4i)"=>"17", "name"=>"Ryan Swanson", "ourid"=>"ryan", "last_login(2i)"=>"8", "supervisor_note_expires(4i)"=>"17", "beg_time(5i)"=>"53", "terminated(1i)"=>"2009", "last_login(3i)"=>"2", "supervisor_note_expires(5i)"=>"53", "security"=>"", "terminated(2i)"=>"8", "hiredate(1i)"=>"2009", "last_login(4i)"=>"17", "terminated(3i)"=>"2", "hiredate(2i)"=>"8", "last_login(5i)"=>"53", "terminated(4i)"=>"17", "hiredate(3i)"=>"2", "supervisor_note_onlyonce"=>"0", "project"=>"", "rememberlast"=>"0", "terminated(5i)"=>"53", "hiredate(4i)"=>"17", "client"=>"", "hiredate(5i)"=>"53", "task"=>"", "supervisor_note_active"=>"0", "beg_time(1i)"=>"2009", "supervisor_note_expires(1i)"=>"2009", "beg_time(2i)"=>"8", "supervisor_note_expires(2i)"=>"8", "beg_time(3i)"=>"2", "supervisor"=>""}}
+  [4;36;1mEmployee Create (0.5ms)[0m   [0;1mINSERT INTO "employee" ("name", "supervisor_note", "hiredate", "security", "last_login", "terminated", "rememberlast", "project", "supervisor_note_onlyonce", "client", "task", "empid", "supervisor_note_active", "supervisor", "beg_time", "supervisor_note_expires") VALUES('Ryan Swanson', '', '2009-08-02 17:53:00', NULL, '2009-08-02 17:53:00', '2009-08-02 17:53:00', 'f', '', 'f', '', '', 'ryan', 'f', '', '2009-08-02 17:53:00', '2009-08-02 17:53:00')[0m
+Redirected to http://localhost:3000/employees/ryan
+Completed in 46ms (DB: 0) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2009-08-02 11:53:29) [GET]
+  Parameters: {"id"=>"ryan"}
+  [4;35;1mEmployee Load (0.8ms)[0m   [0mSELECT * FROM "employee" WHERE ("employee"."empid" = 'ryan') [0m
+Rendering template within layouts/employees
+Rendering employees/show
+Completed in 35ms (View: 7, DB: 1) | 200 OK [http://localhost/employees/ryan]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2009-08-02 11:53:33) [GET]
+  [4;36;1mEmployee Load (1.1ms)[0m   [0;1mSELECT * FROM "employee" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 44ms (View: 27, DB: 1) | 200 OK [http://localhost/employees]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-08-02 11:54:10) [GET]
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 50ms (View: 43, DB: 0) | 200 OK [http://localhost/projects]

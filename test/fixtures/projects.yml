@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  client: MyString
+  project: MyString
+  task: MyString
+  description: MyString
+  billable: false
+  timecard: false
+
+two:
+  client: MyString
+  project: MyString
+  task: MyString
+  description: MyString
+  billable: false
+  timecard: false

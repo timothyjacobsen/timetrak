@@ -1,0 +1,83 @@
+<p>
+  <b>Empid:</b>
+  <%=h @employee.empid %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @employee.name %>
+</p>
+
+<p>
+  <b>Hiredate:</b>
+  <%=h @employee.hiredate %>
+</p>
+
+<p>
+  <b>Terminated:</b>
+  <%=h @employee.terminated %>
+</p>
+
+<p>
+  <b>Supervisor:</b>
+  <%=h @employee.supervisor %>
+</p>
+
+<p>
+  <b>Beg time:</b>
+  <%=h @employee.beg_time %>
+</p>
+
+<p>
+  <b>Rememberlast:</b>
+  <%=h @employee.rememberlast %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%=h @employee.client %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @employee.project %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%=h @employee.task %>
+</p>
+
+<p>
+  <b>Security:</b>
+  <%=h @employee.security %>
+</p>
+
+<p>
+  <b>Supervisor note expires:</b>
+  <%=h @employee.supervisor_note_expires %>
+</p>
+
+<p>
+  <b>Supervisor note onlyonce:</b>
+  <%=h @employee.supervisor_note_onlyonce %>
+</p>
+
+<p>
+  <b>Supervisor note active:</b>
+  <%=h @employee.supervisor_note_active %>
+</p>
+
+<p>
+  <b>Supervisor note:</b>
+  <%=h @employee.supervisor_note %>
+</p>
+
+<p>
+  <b>Last login:</b>
+  <%=h @employee.last_login %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

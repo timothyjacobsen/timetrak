@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  empid: MyString
+  name: MyString
+  hiredate: 2009-08-02 10:31:48
+  terminated: 2009-08-02 10:31:48
+  supervisor: MyString
+  beg_time: 2009-08-02 10:31:48
+  rememberlast: false
+  client: MyString
+  project: MyString
+  task: MyString
+  security: 1
+  supervisor_note_expires: 2009-08-02 10:31:48
+  supervisor_note_onlyonce: false
+  supervisor_note_active: false
+  supervisor_note: MyText
+  last_login: 2009-08-02 10:31:48
+
+two:
+  empid: MyString
+  name: MyString
+  hiredate: 2009-08-02 10:31:48
+  terminated: 2009-08-02 10:31:48
+  supervisor: MyString
+  beg_time: 2009-08-02 10:31:48
+  rememberlast: false
+  client: MyString
+  project: MyString
+  task: MyString
+  security: 1
+  supervisor_note_expires: 2009-08-02 10:31:48
+  supervisor_note_onlyonce: false
+  supervisor_note_active: false
+  supervisor_note: MyText
+  last_login: 2009-08-02 10:31:48
